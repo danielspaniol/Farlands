@@ -1,4 +1,6 @@
 set(PROJECT_LIB_SRC
+    graphics/gl_ctx.cpp
+    graphics/window.cpp
     prelude.cpp
 )
 

@@ -4,6 +4,7 @@ set(PROJECT_LIB_SRC
     graphics/shader_loader.cpp
     graphics/window.cpp
     meshs/triangle_mesh.cpp
+    meshs/quad_mesh.cpp
     prelude.cpp
 )
 

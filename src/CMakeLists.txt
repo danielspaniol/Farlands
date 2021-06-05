@@ -9,6 +9,6 @@ set(PROJECT_LIB_SRC
 )
 
 add_library(${PROJECT_LIB_NAME} ${PROJECT_LIB_SRC})
-target_include_directories(${PROJECT_LIB_NAME} PUBLIC ../include)
+target_include_directories(${PROJECT_LIB_NAME} PUBLIC ../include ../external/glm/include)
 target_link_libraries(${PROJECT_LIB_NAME} glog::glog glfw glad)
 target_set_warnings(${PROJECT_LIB_NAME} ENABLE ALL)

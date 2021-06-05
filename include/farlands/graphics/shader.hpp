@@ -2,12 +2,16 @@
 
 #include "farlands/prelude.hpp"
 
+#include <GLM/glm.hpp>
+
 namespace farlands {
 
 using ShaderName = cstrref;
 using ShaderId = u32;
 using ShaderSrc = cstrref;
 enum class ShaderType { VERTEX, FRAGMENT };
+
+using ShaderProp = cstrref;
 
 /// \brief OpenGL shader program
 class Shader {
@@ -22,6 +26,8 @@ public:
 
   /// \brief Use this shader for draw operations.
   auto use() -> void;
+
+  auto set(ShaderProp prop, glm::mat4 mat) -> void;
 
 private:
   auto compile_shader(ShaderSrc src, ShaderType type) -> ShaderId;

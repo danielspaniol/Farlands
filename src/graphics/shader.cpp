@@ -3,6 +3,8 @@
 #include <GLAD/glad.h>
 #include <glog/logging.h>
 
+#include <GLM/gtc/type_ptr.hpp>
+
 namespace farlands {
 
 static const GLenum SHADER_TYPE[] = {GL_VERTEX_SHADER, GL_FRAGMENT_SHADER};
@@ -76,5 +78,10 @@ auto Shader::validate_program(ShaderId id) -> void {
 }
 
 auto Shader::use() -> void { glUseProgram(m_id); }
+
+auto Shader::set(ShaderProp prop, glm::mat4 mat) -> void {
+  unsigned int transformLoc = glGetUniformLocation(m_id, prop);
+  glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(mat));
+}
 
 } // namespace farlands

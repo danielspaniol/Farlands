@@ -4,7 +4,11 @@
 #include "farlands/graphics/window.hpp"
 #include "farlands/meshs/quad_mesh.hpp"
 
+#include <GLAD/glad.h>
+#include <GLFW/glfw3.h>
 #include <glog/logging.h>
+
+#include <GLM/gtc/matrix_transform.hpp>
 
 using namespace farlands;
 
@@ -26,6 +30,12 @@ int main(int argc, char *argv[]) {
     window.prepare_frame();
     window.update_input();
 
+    glm::mat4 trans(1);
+    trans = glm::translate(trans, glm::vec3(0.1f, -0.2f, 0.0f));
+    trans =
+        glm::rotate(trans, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
+
+    default_shader.set("transform", trans);
     default_shader.use();
     quad.render();
 

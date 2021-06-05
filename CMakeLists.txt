@@ -25,6 +25,7 @@ include(Testing)
 include(Logging)
 include(Documentation)
 include(Warnings)
+include(Graphics)
 
 add_subdirectory(src)
 add_subdirectory(app)

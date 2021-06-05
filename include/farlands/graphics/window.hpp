@@ -17,6 +17,8 @@ public:
   /// \returns false if the window should be closed.
   auto is_open() const -> bool;
 
+  auto prepare_frame() -> void;
+
   /// \brief Polls the inputs and updates the internal state.
   auto update_input() -> void;
   /// \brief Draws and displays the graphics.

@@ -31,11 +31,11 @@ auto Window::is_open() const -> bool {
 
 auto Window::update_input() -> void { glfwPollEvents(); }
 
-auto Window::update_output() -> void {
+auto Window::update_output() -> void { glfwSwapBuffers(m_handle); }
+
+auto Window::prepare_frame() -> void {
   glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
   glClear(GL_COLOR_BUFFER_BIT);
-
-  glfwSwapBuffers(m_handle);
 }
 
 } // namespace farlands

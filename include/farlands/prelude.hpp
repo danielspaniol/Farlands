@@ -34,7 +34,7 @@ using cstr = char *;          ///< C string
 using cstrref = const char *; ///< constant "reference" to a C string
 
 /// \brief Type-safer exit codes
-enum class ExitCode { OK, ERR_SYS };
+enum class ExitCode { OK, ERR_SYS, ERR_GFX };
 
 /// \brief Terminates the program if unreachable code manages to be reached
 [[noreturn]] auto _unreachable(cstrref file, i32 line) -> void;

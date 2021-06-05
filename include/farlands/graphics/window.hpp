@@ -23,6 +23,10 @@ public:
   auto update_output() -> void;
 
 private:
+  static constexpr u32 WIDTH = 1280;
+  static constexpr u32 HEIGHT = 720;
+  static constexpr cstrref TITLE = "farlands";
+
   GlCtx &m_gl;
   GLFWwindow *m_handle;
 };

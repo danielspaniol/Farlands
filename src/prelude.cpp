@@ -17,6 +17,9 @@ namespace farlands {
   case ExitCode::ERR_SYS:
     std::cerr << "Exited with a system error" << std::endl;
     break;
+  case ExitCode::ERR_GFX:
+    std::cerr << "Exited with a graphics error" << std::endl;
+    break;
   }
 
   std::exit(static_cast<i32>(code));

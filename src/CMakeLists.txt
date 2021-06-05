@@ -5,6 +5,7 @@ set(PROJECT_LIB_SRC
     graphics/window.cpp
     meshs/triangle_mesh.cpp
     meshs/quad_mesh.cpp
+    settings/bindings.cpp
     prelude.cpp
 )
 

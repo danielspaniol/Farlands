@@ -3,6 +3,7 @@
 #include "farlands/graphics/shader_loader.hpp"
 #include "farlands/graphics/window.hpp"
 #include "farlands/meshs/quad_mesh.hpp"
+#include "farlands/settings/bindings.hpp"
 
 #include <GLAD/glad.h>
 #include <GLFW/glfw3.h>
@@ -21,6 +22,12 @@ int main(int argc, char *argv[]) {
   GlCtx gl;
   Window window{gl};
   ShaderLoader shader_loader{gl};
+
+  Bindings bindings;
+  bindings[GLFW_KEY_W] = Action::MOVE_FORWARD;
+  bindings[GLFW_KEY_S] = Action::MOVE_BACKWARD;
+  bindings[GLFW_KEY_A] = Action::MOVE_LEFT;
+  bindings[GLFW_KEY_D] = Action::MOVE_RIGHT;
 
   auto default_shader = shader_loader.load_from_file("default");
 

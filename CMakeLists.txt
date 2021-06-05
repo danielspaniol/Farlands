@@ -1,0 +1,33 @@
+cmake_minimum_required(VERSION 3.3)
+project(cpp-project VERSION 0.1.0 LANGUAGES C CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+set(CMAKE_C_STANDARD 11)
+set(CMAKE_C_STANDARD_REQUIRED ON)
+set(CMAKE_C_EXTENSIONS OFF)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+
+option(PROJECT_TESTS "Build tests" ON)
+
+set(PROJECT_NAME project)
+set(PROJECT_LIB_NAME "${PROJECT_NAME}-engine")
+set(PROJECT_BIN_NAME "${PROJECT_NAME}")
+set(PROJECT_TESTS_NAME "${PROJECT_NAME}-tests")
+
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
+include(CMakeValidation)
+include(Testing)
+include(Logging)
+include(Documentation)
+include(Warnings)
+
+add_subdirectory(src)
+add_subdirectory(app)
+if(PROJECT_TESTS)
+    add_subdirectory(test)
+endif()

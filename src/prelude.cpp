@@ -1,9 +1,9 @@
-#include "project/prelude.hpp"
+#include "farlands/prelude.hpp"
 
 #include <cstdlib>
 #include <iostream>
 
-namespace project {
+namespace farlands {
 
 [[noreturn]] auto _unreachable(cstrref file, i32 line) -> void {
   std::cerr << "Reached unreachable code: " << file << '.' << line << std::endl;
@@ -22,4 +22,4 @@ namespace project {
   std::exit(static_cast<i32>(code));
 }
 
-} // namespace project
+} // namespace farlands

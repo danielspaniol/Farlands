@@ -8,11 +8,11 @@
 #include <cstdint>
 
 /// \brief Remove warnings for unused variables
-#define PROJECT_UNUSED(var) ((void)var)
+#define FARLANDS_UNUSED(var) ((void)var)
 /// \brief Used when the compiler can't see some code cannot be reached
-#define PROJECT_UNREACHABLE project::_unreachable(__FILE__, __LINE__)
+#define FARLANDS_UNREACHABLE farlands::_unreachable(__FILE__, __LINE__)
 
-namespace project {
+namespace farlands {
 
 using usize = std::size_t; ///< Integer for indices and sizes
 
@@ -42,4 +42,4 @@ enum class ExitCode { OK, ERR_SYS };
 /// \note Depending on the code, this might print a message
 [[noreturn]] auto exit(ExitCode) -> void;
 
-} // namespace project
+} // namespace farlands

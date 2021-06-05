@@ -1,9 +1,9 @@
-#include "project/prelude.hpp"
+#include "farlands/prelude.hpp"
 
 #include <gtest/gtest-death-test.h>
 #include <gtest/gtest.h>
 
-using namespace project;
+using namespace farlands;
 
 TEST(exit, OnOkExitCode) {
   EXPECT_EXIT(exit(ExitCode::OK), testing::ExitedWithCode(0), "");
@@ -15,5 +15,5 @@ TEST(exit, OnErrorExitCode) {
 }
 
 TEST(UNREACHABLE, KillsTheProcess) {
-  EXPECT_EXIT(PROJECT_UNREACHABLE, testing::ExitedWithCode(1), "unreachable");
+  EXPECT_EXIT(FARLANDS_UNREACHABLE, testing::ExitedWithCode(1), "unreachable");
 }

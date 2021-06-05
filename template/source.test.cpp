@@ -1,7 +1,7 @@
-#include "project/source.hpp"
+#include "farlands/source.hpp"
 
 #include <gtest/gtest.h>
 
-using namespace project;
+using namespace farlands;
 
 TEST(Class, Method__Description) {}

@@ -3,6 +3,7 @@ set(PROJECT_LIB_SRC
     graphics/shader.cpp
     graphics/shader_loader.cpp
     graphics/window.cpp
+    meshs/triangle_mesh.cpp
     prelude.cpp
 )
 

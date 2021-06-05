@@ -2,6 +2,7 @@
 #include "farlands/graphics/shader.hpp"
 #include "farlands/graphics/shader_loader.hpp"
 #include "farlands/graphics/window.hpp"
+#include "farlands/meshs/triangle_mesh.hpp"
 
 #include <glog/logging.h>
 
@@ -19,10 +20,15 @@ int main(int argc, char *argv[]) {
 
   auto default_shader = shader_loader.load_from_file("default");
 
-  while (window.is_open()) {
-    default_shader.use();
+  TriangleMesh triangle{gl};
 
+  while (window.is_open()) {
+    window.prepare_frame();
     window.update_input();
+
+    default_shader.use();
+    triangle.render();
+
     window.update_output();
   }
 

@@ -27,7 +27,7 @@ jobs:
 
     - name: Test
       working-directory: ${{github.workspace}}/build
-      run: bin/project-tests
+      run: bin/farlands-tests
 
 # build-windows:
 #   runs-on: windows-latest

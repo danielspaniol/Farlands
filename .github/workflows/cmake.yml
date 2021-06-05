@@ -26,21 +26,21 @@ jobs:
       working-directory: ${{github.workspace}}/build
       run: bin/project-tests
 
-  build-windows:
-    runs-on: windows-latest
+# build-windows:
+#   runs-on: windows-latest
 
-    steps:
-    - uses: actions/checkout@v2
+#   steps:
+#   - uses: actions/checkout@v2
 
-    - name: Configure CMake
-      run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+#   - name: Configure CMake
+#     run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
 
-    - name: Build
-      run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+#   - name: Build
+#     run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
 
-    - name: Test
-      working-directory: ${{github.workspace}}/build
-      run: bin/project-tests
+#   - name: Test
+#     working-directory: ${{github.workspace}}/build
+#     run: bin/project-tests
 
   build-mac:
     runs-on: macos-latest
@@ -59,16 +59,16 @@ jobs:
       run: bin/project-tests
 
 
-  doc:
-    runs-on: ubuntu-latest
+# doc:
+#   runs-on: ubuntu-latest
 
-    steps:
-    - uses: actions/checkout@v2
+#   steps:
+#   - uses: actions/checkout@v2
 
-    - name: Configure CMake
-      run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+#   - name: Configure CMake
+#     run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
 
-    - name: Doc
-      run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} --target doc
+#   - name: Doc
+#     run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} --target doc
 
       

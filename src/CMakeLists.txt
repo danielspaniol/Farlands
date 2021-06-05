@@ -1,5 +1,7 @@
 set(PROJECT_LIB_SRC
     graphics/gl_ctx.cpp
+    graphics/shader.cpp
+    graphics/shader_loader.cpp
     graphics/window.cpp
     prelude.cpp
 )
